@@ -2,7 +2,7 @@ var express = require("express");
 var app = new express();
 
 // api
-app.use("/api", require("./api"));
+app.use("/", require("./api"));
 
 var argv = require("minimist")(process.argv.slice(2));
 
