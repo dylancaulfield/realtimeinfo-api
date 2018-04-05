@@ -95,7 +95,7 @@ router.get("/luas/:code", async (req, res) => {
     }
 
     var filter = e => {
-        return e.destination !== "No trams forecast" && due !== null;
+        return e.destination !== "No trams forecast" && e.due !== null;
     }
 
     var sort = (a, b) => {
