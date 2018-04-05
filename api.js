@@ -24,7 +24,7 @@ router.get("/irishrail/:station", async (req, res) => {
         return res.json([]);
     }
 
-    var getTrainType = () => {
+    var getTrainType = (e) => {
         switch (e.Traincode[0].charAt(0)) {
             case "A":
                 return "Intercity"
@@ -45,7 +45,7 @@ router.get("/irishrail/:station", async (req, res) => {
             due: parseInt(e.Duein[0]),
             destination: e.Destination[0],
             location: e.Lastlocation[0],
-            type: getTrainType(),
+            type: getTrainType(e),
             late: parseInt(e.Late[0])
         }
     });
